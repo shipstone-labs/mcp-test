@@ -1,0 +1,21 @@
+{
+  "name": "mcp-test",
+  "version": "1.0.0",
+  "description": "MCP test framework for Claude integration",
+  "main": "src/worker.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [
+    "MCP",
+    "Claude",
+    "API",
+    "Assets"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wrangler": "^3.114.6"
+  }
+}

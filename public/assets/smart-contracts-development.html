@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Contract Development</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2563eb;
+        }
+        .header {
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+        .content {
+            margin-bottom: 2rem;
+        }
+        .footer {
+            border-top: 1px solid #e5e7eb;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        code {
+            background-color: #f1f5f9;
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #f1f5f9;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Smart Contract Development</h1>
+        <p>Learn how to build secure smart contracts for blockchain applications</p>
+    </div>
+
+    <div class="content">
+        <h2>What Are Smart Contracts?</h2>
+        <p>
+            Smart contracts are self-executing programs stored on a blockchain that run when predetermined conditions are met. They enable trusted transactions and agreements to be executed without central authority or external enforcement mechanisms.
+        </p>
+
+        <h2>Key Features of Smart Contracts</h2>
+        <ul>
+            <li><strong>Immutability:</strong> Once deployed, a smart contract's code cannot be altered</li>
+            <li><strong>Transparency:</strong> All transactions are verified and visible on the blockchain</li>
+            <li><strong>Trustless Execution:</strong> No need for intermediaries to enforce agreements</li>
+            <li><strong>Deterministic:</strong> Given the same input, will always produce the same output</li>
+            <li><strong>Decentralized:</strong> Run on distributed blockchain networks</li>
+        </ul>
+
+        <h2>Smart Contract Development Languages</h2>
+        <h3>Solidity (Ethereum)</h3>
+        <p>
+            Solidity is a statically-typed programming language designed for implementing smart contracts on Ethereum and compatible blockchains. It's the most widely used language for smart contract development.
+        </p>
+        <pre><code>// Simple Solidity example
+pragma solidity ^0.8.0;
+
+contract SimpleStorage {
+    uint256 private value;
+
+    function set(uint256 newValue) public {
+        value = newValue;
+    }
+
+    function get() public view returns (uint256) {
+        return value;
+    }
+}</code></pre>
+
+        <h3>Other Smart Contract Languages</h3>
+        <ul>
+            <li><strong>Rust:</strong> Used for Solana and NEAR Protocol</li>
+            <li><strong>Vyper:</strong> Python-like alternative for Ethereum</li>
+            <li><strong>Move:</strong> Used in Aptos and Sui</li>
+            <li><strong>Cadence:</strong> Resource-oriented language for Flow</li>
+        </ul>
+
+        <h2>Development Best Practices</h2>
+        <h3>Security Considerations</h3>
+        <ul>
+            <li><strong>Reentrancy Protection:</strong> Prevent attackers from recursively calling functions</li>
+            <li><strong>Integer Overflow/Underflow:</strong> Ensure safe mathematical operations</li>
+            <li><strong>Access Control:</strong> Implement proper permissions for function calls</li>
+            <li><strong>Gas Optimization:</strong> Write efficient code to minimize transaction costs</li>
+            <li><strong>Input Validation:</strong> Always check inputs for validity</li>
+        </ul>
+
+        <h3>Testing and Deployment</h3>
+        <ul>
+            <li><strong>Unit Testing:</strong> Test individual functions</li>
+            <li><strong>Integration Testing:</strong> Test contract interactions</li>
+            <li><strong>Testnet Deployment:</strong> Deploy to test networks before mainnet</li>
+            <li><strong>Formal Verification:</strong> Mathematically prove contract correctness</li>
+            <li><strong>Audit:</strong> Have code reviewed by security experts</li>
+        </ul>
+
+        <h2>Common Smart Contract Use Cases</h2>
+        <ul>
+            <li><strong>DeFi Applications:</strong> Lending, borrowing, trading</li>
+            <li><strong>NFT Marketplaces:</strong> Creating and trading digital assets</li>
+            <li><strong>DAOs:</strong> Decentralized governance structures</li>
+            <li><strong>Supply Chain:</strong> Tracking goods throughout production and distribution</li>
+            <li><strong>Gaming:</strong> Managing in-game assets and economies</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 MCP Test Framework | Last Updated: April 2025</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Engineering Guide</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2563eb;
+        }
+        .header {
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+        .content {
+            margin-bottom: 2rem;
+        }
+        .footer {
+            border-top: 1px solid #e5e7eb;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .technique {
+            background-color: #f1f5f9;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .technique h3 {
+            margin-top: 0;
+        }
+        .example {
+            background-color: #f5f3ff;
+            padding: 0.75rem;
+            border-left: 4px solid #8b5cf6;
+            margin: 1rem 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .tip {
+            background-color: #ecfdf5;
+            padding: 0.75rem;
+            border-left: 4px solid #10b981;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Prompt Engineering Guide</h1>
+        <p>Master the art of crafting effective prompts for AI models</p>
+    </div>
+
+    <div class="content">
+        <h2>What is Prompt Engineering?</h2>
+        <p>
+            Prompt engineering is the practice of designing, refining, and optimizing inputs to AI models to achieve desired outputs. It's become a critical skill for effectively working with large language models (LLMs) and other generative AI systems. Good prompt engineering can dramatically improve the quality, relevance, and accuracy of AI-generated content.
+        </p>
+
+        <h2>Fundamental Principles</h2>
+        <ul>
+            <li><strong>Clarity:</strong> Be specific and unambiguous about what you want</li>
+            <li><strong>Context:</strong> Provide relevant background information</li>
+            <li><strong>Constraints:</strong> Specify limitations and boundaries</li>
+            <li><strong>Examples:</strong> Demonstrate the type of output you expect</li>
+            <li><strong>Iteration:</strong> Refine prompts based on results</li>
+        </ul>
+
+        <div class="tip">
+            <p><strong>Key Insight:</strong> Different AI models have different capabilities, training data, and optimal prompting techniques. What works well for one model may not work as effectively for another.</p>
+        </div>
+
+        <h2>Core Prompt Engineering Techniques</h2>
+        
+        <div class="technique">
+            <h3>Role Prompting</h3>
+            <p>
+                Assign a specific role or persona to the AI to frame its responses from a particular perspective or with certain expertise.
+            </p>
+            <div class="example">
+"You are an experienced cybersecurity expert specializing in encryption. Explain how public key cryptography works to a high school student."</div>
+            <p><strong>Benefits:</strong> Helps focus the model's knowledge domain, establishes tone, and creates a consistent perspective.</p>
+        </div>
+
+        <div class="technique">
+            <h3>Task Decomposition</h3>
+            <p>
+                Break complex tasks into smaller, sequential steps that guide the model through a structured thinking process.
+            </p>
+            <div class="example">
+"I need to analyze this dataset. Please help me by:
+1. Identifying the key variables
+2. Suggesting appropriate statistical methods
+3. Outlining potential insights we might discover
+4. Recommending visualizations that would be helpful"</div>
+            <p><strong>Benefits:</strong> Improves logical flow, reduces errors, and produces more thorough responses.</p>
+        </div>
+
+        <div class="technique">
+            <h3>Few-Shot Learning</h3>
+            <p>
+                Provide examples of desired input-output pairs before asking the model to perform a task.
+            </p>
+            <div class="example">
+"Rewrite these technical explanations to make them accessible to non-experts:
+
+EXAMPLE 1:
+Technical: 'The TCP protocol establishes connection through a three-way handshake process.'
+Simplified: 'Computers use a three-step greeting process to make sure they're connected properly before sending data.'
+
+EXAMPLE 2:
+Technical: 'Quantum computers use qubits which can exist in superposition states.'
+Simplified: 'Unlike regular computers that use bits that are either 0 or 1, quantum computers use special bits that can be both 0 and 1 at the same time.'
+
+Now simplify this:
+Technical: 'Blockchain consensus mechanisms ensure distributed agreement without central authority.'"</div>
+            <p><strong>Benefits:</strong> Demonstrates patterns for the model to follow, establishes formatting, and calibrates output style.</p>
+        </div>
+
+        <div class="technique">
+            <h3>Chain of Thought Prompting</h3>
+            <p>
+                Explicitly instruct the model to explain its reasoning step by step before providing a final answer.
+            </p>
+            <div class="example">
+"Solve this math problem step by step, showing your reasoning at each stage:
+
+A store is having a 25% off sale. If a jacket originally costs $80, and sales tax is 8%, what is the final price?"</div>
+            <p><strong>Benefits:</strong> Improves accuracy for complex reasoning tasks, reveals model's thought process, and reduces logical errors.</p>
+        </div>
+
+        <div class="technique">
+            <h3>Output Formatting</h3>
+            <p>
+                Specify exactly how you want the response structured, including formats, sections, and data organization.
+            </p>
+            <div class="example">
+"Create a content calendar for a tech blog. Format your response as a table with the following columns:
+- Week number
+- Article title
+- Topic category
+- Target keyword
+- Estimated word count
+
+Include 8 weeks of content focused on AI, cybersecurity, and cloud computing."</div>
+            <p><strong>Benefits:</strong> Ensures information is organized usefully, improves readability, and makes extraction of specific data easier.</p>
+        </div>
+
+        <h2>Advanced Techniques</h2>
+        
+        <div class="technique">
+            <h3>System and User Message Separation</h3>
+            <p>
+                For models that support separate system and user messages, use system messages to set persistent instructions and context.
+            </p>
+            <div class="example">
+"SYSTEM: You are a data visualization expert who helps users understand complex data. Always suggest the most appropriate chart types for different data relationships. Keep explanations concise and focus on best practices.
+
+USER: I have time series data showing website traffic across multiple channels. What's the best way to visualize this?"</div>
+            <p><strong>Benefits:</strong> Maintains consistent behavior across multiple turns, separates instructions from content, and reduces repetition.</p>
+        </div>
+
+        <div class="technique">
+            <h3>Constrained Generation</h3>
+            <p>
+                Set specific boundaries and limitations on what the model should or should not include in its response.
+            </p>
+            <div class="example">
+"Write a product description for our new ergonomic office chair. The description must:
+- Be exactly 150-200 words
+- Highlight the adjustable lumbar support and armrests
+- Include at least 3 health benefits
+- NOT mention price or shipping information
+- Use active voice
+- End with a clear call-to-action"</div>
+            <p><strong>Benefits:</strong> Ensures responses meet specific requirements, avoids unwanted content, and focuses model attention on key aspects.</p>
+        </div>
+
+        <div class="technique">
+            <h3>Persona-Based Evaluation</h3>
+            <p>
+                Ask the model to evaluate its own output from different perspectives to improve quality.
+            </p>
+            <div class="example">
+"Draft an email announcing our new security policy to all employees. After drafting the email, evaluate it from the perspective of:
+1. A non-technical employee
+2. A security professional
+3. A busy executive who will scan it quickly
+
+Then improve the email based on these evaluations."</div>
+            <p><strong>Benefits:</strong> Creates more balanced and well-considered outputs, identifies potential issues, and improves overall quality.</p>
+        </div>
+
+        <h2>Common Pitfalls to Avoid</h2>
+        <ul>
+            <li><strong>Ambiguity:</strong> Vague or unclear instructions lead to unpredictable results</li>
+            <li><strong>Overconstraining:</strong> Too many specific requirements can conflict and confuse the model</li>
+            <li><strong>Information Overload:</strong> Extremely long prompts may dilute key instructions</li>
+            <li><strong>Ignoring Context Limits:</strong> Models have fixed context windows; exceeding them cuts off information</li>
+            <li><strong>Leading Questions:</strong> Prompts that assume facts or guide toward specific biased conclusions</li>
+            <li><strong>Failing to Iterate:</strong> Not refining prompts based on results</li>
+        </ul>
+
+        <div class="tip">
+            <p><strong>Pro Tip:</strong> Keep a prompt library of effective prompts you've developed for different tasks. This allows you to reuse and adapt proven patterns rather than starting from scratch each time.</p>
+        </div>
+
+        <h2>Measuring Prompt Effectiveness</h2>
+        <p>
+            When working to improve prompts, consider evaluating them based on:
+        </p>
+        <ul>
+            <li><strong>Accuracy:</strong> Does the response contain factual errors?</li>
+            <li><strong>Relevance:</strong> Does it address the actual query or task?</li>
+            <li><strong>Completeness:</strong> Does it cover all aspects of what was requested?</li>
+            <li><strong>Efficiency:</strong> Does it provide the information concisely?</li>
+            <li><strong>Consistency:</strong> Do similar prompts yield similar quality results?</li>
+            <li><strong>Adaptability:</strong> Does the prompt work across different inputs within the same domain?</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 MCP Test Framework | Last Updated: April 2025</p>
+    </div>
+</body>
+</html>

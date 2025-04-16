@@ -1,0 +1,82 @@
+[
+  {
+    "id": "asset001",
+    "title": "Introduction to AI Agents",
+    "description": "A comprehensive guide to modern AI agents and their applications.",
+    "tags": ["ai", "agents", "introduction", "guide"],
+    "url": "https://example.com/assets/ai-agents-intro.pdf",
+    "type": "document"
+  },
+  {
+    "id": "asset002",
+    "title": "Smart Contract Development",
+    "description": "Learn how to build secure smart contracts for blockchain applications.",
+    "tags": ["blockchain", "ethereum", "smartcontracts", "development", "coding"],
+    "url": "https://example.com/assets/smart-contracts-dev.pdf",
+    "type": "document"
+  },
+  {
+    "id": "asset003",
+    "title": "Decentralized Finance Explained",
+    "description": "A detailed explanation of DeFi protocols and applications.",
+    "tags": ["blockchain", "defi", "finance", "crypto"],
+    "url": "https://example.com/assets/defi-explained.pdf",
+    "type": "document"
+  },
+  {
+    "id": "asset004",
+    "title": "Web3 Development Tools",
+    "description": "Overview of the most popular Web3 development tools and frameworks.",
+    "tags": ["web3", "development", "tools", "blockchain", "coding"],
+    "url": "https://example.com/assets/web3-tools.pdf",
+    "type": "document"
+  },
+  {
+    "id": "asset005",
+    "title": "Cryptography Fundamentals",
+    "description": "Learn the basics of cryptography that power secure digital systems.",
+    "tags": ["cryptography", "security", "encryption", "blockchain"],
+    "url": "https://example.com/assets/crypto-fundamentals.pdf",
+    "type": "document"
+  },
+  {
+    "id": "asset006",
+    "title": "AI for Content Creation",
+    "description": "How to use AI tools to enhance content creation workflows.",
+    "tags": ["ai", "content", "creative", "productivity"],
+    "url": "https://example.com/assets/ai-content-creation.pdf",
+    "type": "document"
+  },
+  {
+    "id": "asset007",
+    "title": "NFT Market Analysis",
+    "description": "Current trends and future prospects in the NFT marketplace.",
+    "tags": ["nft", "market", "analysis", "blockchain", "crypto"],
+    "url": "https://example.com/assets/nft-market-analysis.pdf",
+    "type": "document"
+  },
+  {
+    "id": "asset008",
+    "title": "Prompt Engineering Guide",
+    "description": "Master the art of crafting effective prompts for AI models.",
+    "tags": ["ai", "prompts", "llm", "engineering", "guide"],
+    "url": "https://example.com/assets/prompt-engineering.pdf",
+    "type": "document"
+  },
+  {
+    "id": "asset009",
+    "title": "ZK-Proofs Explained",
+    "description": "A developer-friendly introduction to Zero-Knowledge Proofs.",
+    "tags": ["zkp", "cryptography", "privacy", "blockchain", "ethereum"],
+    "url": "https://example.com/assets/zk-proofs.pdf",
+    "type": "document"
+  },
+  {
+    "id": "asset010",
+    "title": "Digital Asset Regulation",
+    "description": "Current regulatory landscape for digital assets across major jurisdictions.",
+    "tags": ["regulation", "legal", "crypto", "compliance", "governance"],
+    "url": "https://example.com/assets/digital-asset-regulation.pdf",
+    "type": "document"
+  }
+]

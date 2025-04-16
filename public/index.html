@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Test Framework</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f9fafb;
+        }
+        .loader {
+            border-top-color: #3498db;
+            animation: spinner 0.8s linear infinite;
+        }
+        @keyframes spinner {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">MCP Test Framework</h1>
+            <p class="text-gray-600">Search for digital assets that match specific tags</p>
+            <div class="mt-4">
+                <a href="/claude-guide" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Claude MCP Integration Guide
+                </a>
+            </div>
+        </header>
+
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Search Assets</h2>
+            
+            <div class="mb-6">
+                <label for="search-query" class="block mb-2 text-sm font-medium text-gray-700">
+                    Enter Search Query (Claude MCP Compatible)
+                </label>
+                <div class="flex">
+                    <input
+                        type="text"
+                        id="search-query"
+                        class="flex-1 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="e.g., show me ai resources about blockchain"
+                    >
+                    <button 
+                        id="search-button"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                        Search
+                    </button>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label for="tag-search" class="block mb-2 text-sm font-medium text-gray-700">
+                    Or Search By Specific Tags (comma separated)
+                </label>
+                <div class="flex">
+                    <input
+                        type="text"
+                        id="tag-search"
+                        class="flex-1 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="e.g., ai, blockchain, defi"
+                    >
+                    <button 
+                        id="tag-search-button"
+                        class="bg-green-600 text-white px-4 py-2 rounded-r-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    >
+                        Find by Tags
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Available Resources</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                    <h3 class="text-lg font-medium text-gray-900">Introduction to AI Agents</h3>
+                    <p class="mt-1 text-gray-600">A comprehensive guide to modern AI agents and their applications.</p>
+                    <div class="mt-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            Tags: ai, agents, introduction
+                        </div>
+                        <a href="/assets/ai-agents-intro.html" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            View Resource →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                    <h3 class="text-lg font-medium text-gray-900">Smart Contract Development</h3>
+                    <p class="mt-1 text-gray-600">Learn how to build secure smart contracts for blockchain applications.</p>
+                    <div class="mt-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            Tags: blockchain, ethereum, smartcontracts
+                        </div>
+                        <a href="/assets/smart-contracts-development.html" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            View Resource →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                    <h3 class="text-lg font-medium text-gray-900">Decentralized Finance Explained</h3>
+                    <p class="mt-1 text-gray-600">A detailed explanation of DeFi protocols and applications.</p>
+                    <div class="mt-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            Tags: blockchain, defi, finance
+                        </div>
+                        <a href="/assets/defi-explained.html" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            View Resource →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                    <h3 class="text-lg font-medium text-gray-900">Web3 Development Tools</h3>
+                    <p class="mt-1 text-gray-600">Overview of the most popular Web3 development tools and frameworks.</p>
+                    <div class="mt-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            Tags: web3, development, blockchain
+                        </div>
+                        <a href="/assets/web3-tools.html" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            View Resource →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                    <h3 class="text-lg font-medium text-gray-900">Cryptography Fundamentals</h3>
+                    <p class="mt-1 text-gray-600">Learn the basics of cryptography that power secure digital systems.</p>
+                    <div class="mt-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            Tags: cryptography, security, encryption
+                        </div>
+                        <a href="/assets/crypto-fundamentals.html" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            View Resource →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                    <h3 class="text-lg font-medium text-gray-900">AI for Content Creation</h3>
+                    <p class="mt-1 text-gray-600">How to use AI tools to enhance content creation workflows.</p>
+                    <div class="mt-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            Tags: ai, content, creative
+                        </div>
+                        <a href="/assets/ai-content-creation.html" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            View Resource →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                    <h3 class="text-lg font-medium text-gray-900">NFT Market Analysis</h3>
+                    <p class="mt-1 text-gray-600">Current trends and future prospects in the NFT marketplace.</p>
+                    <div class="mt-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            Tags: nft, market, blockchain
+                        </div>
+                        <a href="/assets/nft-market-analysis.html" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            View Resource →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                    <h3 class="text-lg font-medium text-gray-900">Prompt Engineering Guide</h3>
+                    <p class="mt-1 text-gray-600">Master the art of crafting effective prompts for AI models.</p>
+                    <div class="mt-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            Tags: ai, prompts, llm
+                        </div>
+                        <a href="/assets/prompt-engineering.html" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            View Resource →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                    <h3 class="text-lg font-medium text-gray-900">ZK-Proofs Explained</h3>
+                    <p class="mt-1 text-gray-600">A developer-friendly introduction to Zero-Knowledge Proofs.</p>
+                    <div class="mt-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            Tags: zkp, cryptography, privacy
+                        </div>
+                        <a href="/assets/zk-proofs-explained.html" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            View Resource →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                    <h3 class="text-lg font-medium text-gray-900">Digital Asset Regulation</h3>
+                    <p class="mt-1 text-gray-600">Current regulatory landscape for digital assets across major jurisdictions.</p>
+                    <div class="mt-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            Tags: regulation, legal, crypto
+                        </div>
+                        <a href="/assets/digital-asset-regulation.html" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            View Resource →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Results -->
+        <div id="loading" class="hidden flex justify-center my-8">
+            <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"></div>
+        </div>
+        
+        <div id="results-container" class="hidden bg-white rounded-lg shadow-md p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">Search Results</h2>
+                <span id="result-count" class="text-sm text-gray-600">0 results</span>
+            </div>
+            
+            <div id="result-tags" class="mb-4 flex flex-wrap gap-2">
+                <!-- Tags will be inserted here -->
+            </div>
+            
+            <div id="results" class="space-y-4">
+                <!-- Results will be inserted here -->
+            </div>
+        </div>
+
+        <!-- No Results -->
+        <div id="no-results" class="hidden bg-white rounded-lg shadow-md p-6 text-center">
+            <p class="text-gray-700">No matching assets found. Try different search terms.</p>
+        </div>
+
+        <!-- API Activity Log -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">API Activity Log</h2>
+                <button id="clear-log" class="text-sm text-red-600 hover:text-red-800">Clear Log</button>
+            </div>
+            <div id="api-log" class="space-y-2 text-sm max-h-60 overflow-y-auto font-mono bg-gray-50 p-3 rounded">
+                <div class="text-gray-500">No activity recorded yet. API calls will appear here.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchQuery = document.getElementById('search-query');
+            const searchButton = document.getElementById('search-button');
+            const tagSearch = document.getElementById('tag-search');
+            const tagSearchButton = document.getElementById('tag-search-button');
+            const resultsContainer = document.getElementById('results-container');
+            const results = document.getElementById('results');
+            const resultCount = document.getElementById('result-count');
+            const resultTags = document.getElementById('result-tags');
+            const noResults = document.getElementById('no-results');
+            const loading = document.getElementById('loading');
+            const apiLog = document.getElementById('api-log');
+            const clearLogButton = document.getElementById('clear-log');
+            
+            // Function to add a log entry
+            function logApiCall(endpoint, method, payload, response, isSuccess) {
+                const timestamp = new Date().toLocaleTimeString();
+                const logEntry = document.createElement('div');
+                logEntry.className = isSuccess ? 'text-green-800' : 'text-red-800';
+                
+                let payloadStr = typeof payload === 'object' ? JSON.stringify(payload) : payload;
+                if (payloadStr.length > 50) {
+                    payloadStr = payloadStr.substring(0, 50) + '...';
+                }
+                
+                let responseStr = '';
+                if (response) {
+                    responseStr = typeof response === 'object' ? JSON.stringify(response) : response;
+                    if (responseStr.length > 100) {
+                        responseStr = responseStr.substring(0, 100) + '...';
+                    }
+                }
+                
+                logEntry.innerHTML = `
+                    <div class="font-semibold">${timestamp} - ${method} ${endpoint}</div>
+                    <div class="pl-4">Payload: ${payloadStr}</div>
+                    ${response ? `<div class="pl-4">Response: ${responseStr}</div>` : ''}
+                `;
+                
+                // Clear default message if present
+                if (apiLog.firstChild && apiLog.firstChild.textContent === 'No activity recorded yet. API calls will appear here.') {
+                    apiLog.innerHTML = '';
+                }
+                
+                // Add new log at the top
+                apiLog.insertBefore(logEntry, apiLog.firstChild);
+                
+                // Add separator
+                const separator = document.createElement('div');
+                separator.className = 'border-t border-gray-200 my-2';
+                apiLog.insertBefore(separator, apiLog.children[1] || null);
+            }
+            
+            // Clear log
+            clearLogButton.addEventListener('click', () => {
+                apiLog.innerHTML = '<div class="text-gray-500">No activity recorded yet. API calls will appear here.</div>';
+            });
+
+            // MCP search endpoint
+            searchButton.addEventListener('click', async () => {
+                const query = searchQuery.value.trim();
+                if (!query) return;
+                
+                showLoading();
+                const payload = { query };
+                
+                try {
+                    logApiCall('/api/mcp/search', 'POST', payload, null);
+                    
+                    const response = await fetch('/api/mcp/search', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    const data = await response.json();
+                    logApiCall('/api/mcp/search', 'POST', payload, data, true);
+                    displayResults(data);
+                } catch (error) {
+                    console.error('Error searching:', error);
+                    logApiCall('/api/mcp/search', 'POST', payload, error.message, false);
+                    hideLoading();
+                    alert('An error occurred while searching. Please try again.');
+                }
+            });
+
+            // Tag search endpoint
+            tagSearchButton.addEventListener('click', async () => {
+                const tags = tagSearch.value.trim();
+                if (!tags) return;
+                
+                showLoading();
+                const tagArray = tags.split(',').map(tag => tag.trim()).filter(tag => tag);
+                const payload = { tags: tagArray };
+                
+                try {
+                    logApiCall('/api/assets/tags', 'POST', payload, null);
+                    
+                    const response = await fetch('/api/assets/tags', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    const data = await response.json();
+                    logApiCall('/api/assets/tags', 'POST', payload, data, true);
+                    
+                    displayResults({
+                        results: data.results,
+                        query: { tags: tagArray },
+                        meta: data.meta
+                    });
+                } catch (error) {
+                    console.error('Error searching by tags:', error);
+                    logApiCall('/api/assets/tags', 'POST', payload, error.message, false);
+                    hideLoading();
+                    alert('An error occurred while searching. Please try again.');
+                }
+            });
+
+            // Enter key functionality
+            searchQuery.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    searchButton.click();
+                }
+            });
+
+            tagSearch.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    tagSearchButton.click();
+                }
+            });
+
+            function showLoading() {
+                loading.classList.remove('hidden');
+                resultsContainer.classList.add('hidden');
+                noResults.classList.add('hidden');
+            }
+
+            function hideLoading() {
+                loading.classList.add('hidden');
+            }
+
+            function displayResults(data) {
+                hideLoading();
+                results.innerHTML = '';
+                resultTags.innerHTML = '';
+                
+                const assetResults = data.results || [];
+                
+                if (assetResults.length === 0) {
+                    noResults.classList.remove('hidden');
+                    resultsContainer.classList.add('hidden');
+                    return;
+                }
+                
+                resultCount.textContent = `${assetResults.length} result${assetResults.length !== 1 ? 's' : ''}`;
+                
+                // Display search tags
+                if (data.query && data.query.tags) {
+                    data.query.tags.forEach(tag => {
+                        const tagEl = document.createElement('span');
+                        tagEl.className = 'px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full';
+                        tagEl.textContent = tag;
+                        resultTags.appendChild(tagEl);
+                    });
+                }
+                
+                // Display results
+                assetResults.forEach(asset => {
+                    const assetElement = document.createElement('div');
+                    assetElement.className = 'border border-gray-200 rounded-lg p-4 hover:bg-gray-50';
+                    
+                    assetElement.innerHTML = `
+                        <div class="flex justify-between">
+                            <h3 class="text-lg font-medium text-gray-900">${asset.title}</h3>
+                            <div class="text-xs text-gray-500">${asset.type}</div>
+                        </div>
+                        <p class="mt-1 text-gray-600">${asset.description}</p>
+                        <div class="mt-3 flex items-center justify-between">
+                            <div class="flex flex-wrap gap-1">
+                                ${asset.tags.map(tag => `
+                                    <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded-full">${tag}</span>
+                                `).join('')}
+                            </div>
+                            <a href="${asset.url}" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                View Resource →
+                            </a>
+                        </div>
+                    `;
+                    
+                    results.appendChild(assetElement);
+                });
+                
+                resultsContainer.classList.remove('hidden');
+                noResults.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

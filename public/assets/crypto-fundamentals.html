@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography Fundamentals</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2563eb;
+        }
+        .header {
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+        .content {
+            margin-bottom: 2rem;
+        }
+        .footer {
+            border-top: 1px solid #e5e7eb;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .concept {
+            background-color: #f1f5f9;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .concept h3 {
+            margin-top: 0;
+        }
+        .example {
+            background-color: #ecfdf5;
+            padding: 0.5rem 1rem;
+            border-left: 4px solid #10b981;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cryptography Fundamentals</h1>
+        <p>Learn the basics of cryptography that power secure digital systems</p>
+    </div>
+
+    <div class="content">
+        <h2>Introduction to Cryptography</h2>
+        <p>
+            Cryptography is the practice and study of techniques for securing communications in the presence of adversaries. Modern cryptography exists at the intersection of mathematics, computer science, and electrical engineering. It underpins many technologies we rely on daily, from secure messaging and online banking to blockchain networks and digital identities.
+        </p>
+
+        <h2>Core Cryptographic Concepts</h2>
+        
+        <div class="concept">
+            <h3>Symmetric Encryption</h3>
+            <p>
+                Symmetric encryption uses the same key for both encryption and decryption. It's fast and efficient for large data but requires a secure method to share the key between parties.
+            </p>
+            <p><strong>Common Algorithms:</strong> AES, ChaCha20, 3DES</p>
+            <div class="example">
+                <p><strong>Example:</strong> When you encrypt a file with a password on your computer, you're using symmetric encryption. The password is the key that both encrypts and decrypts the file.</p>
+            </div>
+        </div>
+
+        <div class="concept">
+            <h3>Asymmetric Encryption (Public Key Cryptography)</h3>
+            <p>
+                Asymmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption. This enables secure communication without sharing secret keys.
+            </p>
+            <p><strong>Common Algorithms:</strong> RSA, ECC (Elliptic Curve Cryptography)</p>
+            <div class="example">
+                <p><strong>Example:</strong> When you visit an HTTPS website, your browser uses the site's public key to encrypt data. Only the website, with its private key, can decrypt it.</p>
+            </div>
+        </div>
+
+        <div class="concept">
+            <h3>Cryptographic Hash Functions</h3>
+            <p>
+                Hash functions convert data of any size into a fixed-size output (hash) in a way that is deterministic but practically impossible to reverse. Small changes to input data result in completely different output hashes.
+            </p>
+            <p><strong>Properties:</strong></p>
+            <ul>
+                <li><strong>One-way:</strong> Cannot derive input from output</li>
+                <li><strong>Deterministic:</strong> Same input always produces same output</li>
+                <li><strong>Avalanche effect:</strong> Small input changes cause large output changes</li>
+                <li><strong>Collision resistance:</strong> Difficult to find two inputs with same output</li>
+            </ul>
+            <p><strong>Common Algorithms:</strong> SHA-256, SHA-3, BLAKE2, BLAKE3</p>
+            <div class="example">
+                <p><strong>Example:</strong> Blockchain networks use hash functions to create block identifiers and maintain the integrity of the transaction history.</p>
+            </div>
+        </div>
+
+        <div class="concept">
+            <h3>Digital Signatures</h3>
+            <p>
+                Digital signatures combine hash functions and asymmetric cryptography to provide authentication, non-repudiation, and integrity verification for digital messages or documents.
+            </p>
+            <p><strong>Process:</strong></p>
+            <ol>
+                <li>Create a hash of the message</li>
+                <li>Encrypt the hash with the sender's private key</li>
+                <li>Receiver decrypts the signature with the sender's public key</li>
+                <li>Receiver compares the decrypted hash with a newly calculated hash of the message</li>
+            </ol>
+            <p><strong>Common Algorithms:</strong> ECDSA, EdDSA, RSA-PSS</p>
+            <div class="example">
+                <p><strong>Example:</strong> When you send a cryptocurrency transaction, you're digitally signing it with your private key to prove that you authorized the transfer.</p>
+            </div>
+        </div>
+
+        <h2>Cryptography in Blockchain Technology</h2>
+        <p>
+            Blockchain systems rely heavily on cryptographic primitives:
+        </p>
+        <ul>
+            <li><strong>Public Key Cryptography:</strong> Creates addresses and authenticates transactions</li>
+            <li><strong>Hash Functions:</strong> Links blocks together and maintains the integrity of the chain</li>
+            <li><strong>Digital Signatures:</strong> Proves ownership and authorizes transactions</li>
+            <li><strong>Merkle Trees:</strong> Efficiently verifies the inclusion of transactions in blocks</li>
+        </ul>
+
+        <h2>Advanced Cryptographic Concepts</h2>
+        <ul>
+            <li><strong>Zero-Knowledge Proofs:</strong> Prove knowledge of information without revealing the information itself</li>
+            <li><strong>Homomorphic Encryption:</strong> Perform calculations on encrypted data without decrypting it</li>
+            <li><strong>Threshold Cryptography:</strong> Distribute cryptographic operations across multiple parties</li>
+            <li><strong>Post-Quantum Cryptography:</strong> Cryptographic systems resistant to quantum computing attacks</li>
+        </ul>
+
+        <h2>Cryptographic Best Practices</h2>
+        <ul>
+            <li><strong>Use established algorithms:</strong> Don't create your own cryptographic solutions</li>
+            <li><strong>Keep private keys secure:</strong> Use hardware security modules when possible</li>
+            <li><strong>Implement proper key management:</strong> Generate, store, and rotate keys securely</li>
+            <li><strong>Stay updated:</strong> Cryptographic algorithms can become vulnerable over time</li>
+            <li><strong>Defense in depth:</strong> Don't rely on a single cryptographic measure</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 MCP Test Framework | Last Updated: April 2025</p>
+    </div>
+</body>
+</html>

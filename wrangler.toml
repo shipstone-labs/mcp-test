@@ -1,0 +1,7 @@
+name = "mcp-test"
+main = "src/worker.js"
+compatibility_date = "2023-12-01"
+
+# Configure static assets
+[site]
+bucket = "./public"
