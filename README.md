@@ -206,6 +206,3 @@ You can test the endpoint directly with this curl command:
 curl -X POST -H "Content-Type: application/json" -d '{"query":"AI information"}' https://mcp.safeidea.net/api/mcp/search
 ```
 
-## License
-
-This project is provided under the ISC license.
