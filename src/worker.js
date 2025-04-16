@@ -255,85 +255,171 @@ const indexHtml = `<!DOCTYPE html>
 </html>`;
 
 // Asset data
+// Note: During build process, this data is generated from HTML files in public/assets/
+// See build-assets.js for the generation logic
+// The build script will add the generated assets here during the build process
 const assets = [
   {
     "id": "asset001",
-    "title": "Introduction to AI Agents",
-    "description": "A comprehensive guide to modern AI agents and their applications.",
-    "tags": ["ai", "agents", "introduction", "guide"],
+    "title": "Introduction to AI Agents and Assistants",
+    "description": "A comprehensive guide to modern AI agents, assistants, and their real-world applications",
+    "tags": [
+      "ai",
+      "agents",
+      "assistants",
+      "llm",
+      "claude",
+      "gpt",
+      "automation"
+    ],
     "url": "/assets/ai-agents-intro.html",
     "type": "document"
   },
   {
     "id": "asset002",
-    "title": "Smart Contract Development",
-    "description": "Learn how to build secure smart contracts for blockchain applications.",
-    "tags": ["blockchain", "ethereum", "smartcontracts", "development", "coding"],
-    "url": "/assets/smart-contracts-development.html",
-    "type": "document"
-  },
-  {
-    "id": "asset003",
-    "title": "Decentralized Finance Explained",
-    "description": "A detailed explanation of DeFi protocols and applications.",
-    "tags": ["blockchain", "defi", "finance", "crypto"],
-    "url": "/assets/defi-explained.html",
-    "type": "document"
-  },
-  {
-    "id": "asset004",
-    "title": "Web3 Development Tools",
-    "description": "Overview of the most popular Web3 development tools and frameworks.",
-    "tags": ["web3", "development", "tools", "blockchain", "coding"],
-    "url": "/assets/web3-tools.html",
-    "type": "document"
-  },
-  {
-    "id": "asset005",
-    "title": "Cryptography Fundamentals",
-    "description": "Learn the basics of cryptography that power secure digital systems.",
-    "tags": ["cryptography", "security", "encryption", "blockchain"],
-    "url": "/assets/crypto-fundamentals.html",
-    "type": "document"
-  },
-  {
-    "id": "asset006",
     "title": "AI for Content Creation",
-    "description": "How to use AI tools to enhance content creation workflows.",
-    "tags": ["ai", "content", "creative", "productivity"],
+    "description": "How to use AI tools to enhance content creation workflows",
+    "tags": [
+      "ai",
+      "content",
+      "creation"
+    ],
     "url": "/assets/ai-content-creation.html",
     "type": "document"
   },
   {
-    "id": "asset007",
+    "id": "asset003",
+    "title": "Cryptography Fundamentals",
+    "description": "Learn the basics of cryptography that power secure digital systems",
+    "tags": [
+      "crypto",
+      "fundamentals",
+      "cryptography",
+      "blockchain",
+      "ai"
+    ],
+    "url": "/assets/crypto-fundamentals.html",
+    "type": "document"
+  },
+  {
+    "id": "asset004",
+    "title": "Decentralized Finance Explained",
+    "description": "A detailed explanation of DeFi protocols and applications",
+    "tags": [
+      "defi",
+      "explained",
+      "decentralized",
+      "finance",
+      "blockchain",
+      "crypto",
+      "ai",
+      "smartcontract"
+    ],
+    "url": "/assets/defi-explained.html",
+    "type": "document"
+  },
+  {
+    "id": "asset005",
+    "title": "Digital Asset Regulation",
+    "description": "Current regulatory landscape for digital assets across major jurisdictions",
+    "tags": [
+      "digital",
+      "asset",
+      "regulation",
+      "blockchain",
+      "crypto",
+      "ai",
+      "defi",
+      "nft",
+      "ethereum",
+      "privacy",
+      "development"
+    ],
+    "url": "/assets/digital-asset-regulation.html",
+    "type": "document"
+  },
+  {
+    "id": "asset006",
     "title": "NFT Market Analysis",
-    "description": "Current trends and future prospects in the NFT marketplace.",
-    "tags": ["nft", "market", "analysis", "blockchain", "crypto"],
+    "description": "Current trends and future prospects in the NFT marketplace",
+    "tags": [
+      "nft",
+      "market",
+      "analysis",
+      "blockchain",
+      "ai",
+      "ethereum"
+    ],
     "url": "/assets/nft-market-analysis.html",
     "type": "document"
   },
   {
-    "id": "asset008",
+    "id": "asset007",
     "title": "Prompt Engineering Guide",
-    "description": "Master the art of crafting effective prompts for AI models.",
-    "tags": ["ai", "prompts", "llm", "engineering", "guide"],
+    "description": "Master the art of crafting effective prompts for AI models",
+    "tags": [
+      "prompt",
+      "engineering",
+      "guide",
+      "blockchain",
+      "crypto",
+      "ai"
+    ],
     "url": "/assets/prompt-engineering.html",
     "type": "document"
   },
   {
+    "id": "asset008",
+    "title": "Smart Contract Development",
+    "description": "Learn how to build secure smart contracts for blockchain applications",
+    "tags": [
+      "smart",
+      "contracts",
+      "development",
+      "contract",
+      "blockchain",
+      "ai",
+      "defi",
+      "nft",
+      "ethereum",
+      "smartcontract"
+    ],
+    "url": "/assets/smart-contracts-development.html",
+    "type": "document"
+  },
+  {
     "id": "asset009",
-    "title": "ZK-Proofs Explained",
-    "description": "A developer-friendly introduction to Zero-Knowledge Proofs.",
-    "tags": ["zkp", "cryptography", "privacy", "blockchain", "ethereum"],
-    "url": "/assets/zk-proofs-explained.html",
+    "title": "Web3 Development Tools",
+    "description": "Overview of the most popular Web3 development tools and frameworks",
+    "tags": [
+      "web3",
+      "tools",
+      "development",
+      "blockchain",
+      "ai",
+      "ethereum",
+      "smartcontract"
+    ],
+    "url": "/assets/web3-tools.html",
     "type": "document"
   },
   {
     "id": "asset010",
-    "title": "Digital Asset Regulation",
-    "description": "Current regulatory landscape for digital assets across major jurisdictions.",
-    "tags": ["regulation", "legal", "crypto", "compliance", "governance"],
-    "url": "/assets/digital-asset-regulation.html",
+    "title": "ZK-Proofs Explained",
+    "description": "A developer-friendly introduction to Zero-Knowledge Proofs",
+    "tags": [
+      "zk",
+      "proofs",
+      "explained",
+      "zk-proofs",
+      "blockchain",
+      "crypto",
+      "ai",
+      "ethereum",
+      "privacy",
+      "development"
+    ],
+    "url": "/assets/zk-proofs-explained.html",
     "type": "document"
   }
 ];
