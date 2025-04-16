@@ -169,20 +169,25 @@ This project includes 10 static HTML resources on various topics:
 
 ## Modifying Asset Data
 
-To modify the list of assets, edit the `assets` array in the `src/worker.js` file. Each asset should follow this format:
+Asset metadata is now automatically generated from the HTML files in the `/public/assets/` directory. To add or modify resources:
 
-```javascript
-{
-  "id": "unique-identifier",
-  "title": "Asset Title",
-  "description": "A description of the asset",
-  "tags": ["tag1", "tag2", "tag3"],
-  "url": "/assets/filename.html",
-  "type": "document|image|video|etc"
-}
-```
+1. Add or edit HTML files in the `/public/assets/` directory
+2. Include proper metadata in your HTML file:
+   ```html
+   <title>Your Resource Title</title>
+   <meta name="description" content="Your resource description">
+   <meta name="keywords" content="comma,separated,tags">
+   ```
+3. Run `npm run build:assets` to regenerate the assets.json file (this happens automatically during deployment)
 
-To add new resources, place HTML files in the `/public/assets/` directory and update the assets array accordingly.
+The build script will extract:
+- **Title**: From the `<title>` tag
+- **Description**: From the `<meta name="description">` tag or the first paragraph
+- **Tags**: From the `<meta name="keywords">` tag or inferred from content
+- **URL**: Automatically generated from the filename
+- **Type**: Set to "document" by default
+
+The asset metadata will be stored in `data/assets.json` and imported into the worker.
 
 ## Architecture
 

@@ -4,8 +4,9 @@
   "description": "MCP test framework for Claude integration",
   "main": "src/worker.js",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "build:assets": "node build-assets.js",
+    "dev": "npm run build:assets && wrangler dev",
+    "deploy": "npm run build:assets && wrangler deploy"
   },
   "keywords": [
     "MCP",
@@ -16,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "jsdom": "^22.1.0",
     "wrangler": "^3.114.6"
   }
 }
