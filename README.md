@@ -1,6 +1,6 @@
 # MCP for SafeIdea Tests
 
-This is a project that tests how reliably we can get Claude to interact with a website with an MCP endpoint. Since they invented it we figure that they would be best at talking to MCP. It's pretty hit-or-miss right now.
+This project tests how reliably we can get Claude to interact with a website with an MCP endpoint. Since they invented MCP, we figure that they would be best at talking to MCP. It's pretty hit-or-miss right now. Courtesy mostly Claude Code.
 
 # MCP Test Framework
 
