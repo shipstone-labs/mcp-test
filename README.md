@@ -1,3 +1,7 @@
+# MCP for SafeIdea Tests
+
+This is a project that tests how reliably we can get Claude to interact with a website with an MCP endpoint. Since they invented it we figure that they would be best at talking to MCP. It's pretty hit-or-miss right now.
+
 # MCP Test Framework
 
 A simple Cloudflare Workers framework to test Multimodal Communication Protocol (MCP) functionality with Claude or other LLMs. This application demonstrates:
